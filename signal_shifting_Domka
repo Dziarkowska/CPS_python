@@ -1,0 +1,14 @@
+import numpy
+import matplotlib.pyplot as plt 
+def signal_shifting(params, data):
+	data = data.transpose()
+	fp = 180000
+	time = range(0,divide(size(data)-1,fp))	
+	#plt.plot(time, data) 
+	#plt.title('Sygnal przesuniety na srodek') 
+	#plt.show() 
+	arg = 2*pi*(params.shift*time)
+	shifted_1 = data * cos(arg)
+	shifted_2 = -data * sin(arg)
+	shifted = shifted_1 + 1j*shifted_2
+	return shifted
